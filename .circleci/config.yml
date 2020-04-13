@@ -5,26 +5,25 @@ orbs:
   # Declare a dependency on the welcome-orb
   welcome: circleci/welcome-orb@0.4.1
 # Orchestrate or schedule a set of jobs
-workflows:
+#workflows:
   # Name the workflow "welcome"
-  welcome:
+#  welcome:
     # Run the welcome/run job in its own container
-    jobs:
-      - welcome/run
-      checkout-install-dependencies:
-        working_directory: ~/support-me-mc
-        machine: true
-        steps:
-          - checkout
-          - run:
-              name: Prepare workspace
-              command: |
-                rm -rf .git
-                chmod -R ugo+rwx ~/support-me-mc
-          - run:
-              name: Install dependencies
-              command: docker run --rm -w /support-me-mc -v $PWD:/support-me-mc circleci/node:8.11-stretch sh -c "npm install && chmod -R ugo+rwx ./node_modules"
-          - persist_to_workspace:
-              root: ~/support-me-mc
-              paths:
-                - .
+jobs:
+  checkout-install-dependencies:
+    working_directory: ~/support-me-mc
+    machine: true
+    steps:
+      - checkout
+      - run:
+          name: Prepare workspace
+          command: |
+            rm -rf .git
+            chmod -R ugo+rwx ~/support-me-mc
+      - run:
+          name: Install dependencies
+          command: docker run --rm -w /support-me-mc -v $PWD:/support-me-mc circleci/node:8.11-stretch sh -c "npm install && chmod -R ugo+rwx ./node_modules"
+      - persist_to_workspace:
+          root: ~/support-me-mc
+          paths:
+            - .
