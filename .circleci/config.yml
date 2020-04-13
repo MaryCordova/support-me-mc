@@ -5,7 +5,6 @@ jobs:
       - image: circleci/node:12.9.1-browsers
 
     working_directory: ~/support-me-mc
-    machine: true
 steps:
   - checkout
 
