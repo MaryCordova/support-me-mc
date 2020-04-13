@@ -62,9 +62,9 @@ workflows:
 #      - security-scan:
 #          requires:
 #            - checkout-install-dependencies
-#      - unit-tests:
-#          requires:
-#            - checkout-install-dependencies
+      - unit-tests:
+          requires:
+            - checkout-install-dependencies
 #      - deploy-staging:
 #          requires:
 #            - security-scan
