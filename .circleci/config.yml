@@ -28,7 +28,7 @@ jobs:
             chmod -R ugo+rwx ~/support-me-mc
       - run:
           name: Install dependencies
-          command: docker run --rm -w /support-me-mc -v $PWD:/support-me-mc circleci/node:8.12.0-browsers sh -c "npm install && chmod -R ugo+rwx ./node_modules"
+          command: docker run --rm -w /support-me-mc -v $PWD:/support-me-mc circleci/node:8.12.0-browsers sh -c "npm install "
       - persist_to_workspace:
           root: ~/support-me-mc
           paths:
