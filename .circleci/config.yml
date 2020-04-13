@@ -27,7 +27,7 @@ jobs:
             chmod -R ugo+rwx ~/support-me-mc
       - run:
           name: Install dependencies
-            command: yarn install
+          command: yarn install
       - persist_to_workspace:
           root: ~/support-me-mc
           paths:
