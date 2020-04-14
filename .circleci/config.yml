@@ -33,7 +33,6 @@ jobs:
           root: ~/support-me-mc
           paths:
             - .
-
   unit-tests:
     working_directory: ~/support-me-mc
     parallelism: 3
