@@ -4,7 +4,6 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "run-tests": "npm run build-css > /dev/null 2>&1 && react-scripts test --env=jsdom",
     "run-test-coverage": "npm run build-css > /dev/null 2>&1 && react-scripts test --env=jsdom --coverage --maxWorkers=2"
   },
