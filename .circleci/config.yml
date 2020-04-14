@@ -46,6 +46,9 @@ jobs:
           command: |
             npm rebuild node-sass
             CI=true npm run test
+      - run:
+          name: Change paths in coverage file
+          command: sed -i "s:/home/circleci/support-me-mc/:/usr/local/src/app/:g" ./coverage/lcov.info
       - persist_to_workspace:
           root: ~/support-me-mc
           paths:
