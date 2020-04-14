@@ -28,7 +28,7 @@ jobs:
             chmod -R ugo+rwx ~/support-me-mc
       - run:
           name: Install dependencies
-          command: docker run --rm -w /support-me-mc -v $PWD:/support-me-mc circleci/node:8.12.0-browsers sh -c "npm install "
+          command: "npm install "
       - persist_to_workspace:
           root: ~/support-me-mc
           paths:
@@ -36,18 +36,11 @@ jobs:
   unit-tests:
     working_directory: ~/support-me-mc
     parallelism: 3
-    docker:
-      - image: circleci/node:8.12.0-browsers
     steps:
       - *attach-workspace
       - run:
           name: Running unit tests
-          command: |
-            npm rebuild node-sass
-            CI=true npm run test
-      - run:
-          name: Change paths in coverage file
-          command: sed -i "s:/home/circleci/support-me-mc/:/usr/local/src/app/:g" ./coverage/lcov.info
+          command: "npm test"
       - persist_to_workspace:
           root: ~/support-me-mc
           paths:

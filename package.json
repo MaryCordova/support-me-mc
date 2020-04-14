@@ -1,13 +1,10 @@
 {
-  "name": "proj",
+  "name": "support-me-mc",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "run-tests": "npm run build-css > /dev/null 2>&1 && react-scripts test --env=jsdom",
-    "run-test-coverage": "npm run build-css > /dev/null 2>&1 && react-scripts test --env=jsdom --coverage --maxWorkers=2"
+    "start": "react-native start"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    
+  }
 }
