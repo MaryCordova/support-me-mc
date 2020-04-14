@@ -35,7 +35,7 @@ jobs:
             - .
 
   unit-tests:
-    working_directory: ~/leave-ecuador
+    working_directory: ~/support-me-mc
     parallelism: 3
     docker:
       - image: circleci/node:8.12.0-browsers
